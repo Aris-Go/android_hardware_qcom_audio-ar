@@ -94,7 +94,7 @@ BUILD_AUDIO_TECHPACK_SOURCE := true
 AUDIO_FEATURE_ENABLED_MCS := true
 ##AUDIO_FEATURE_FLAGS
 BOARD_SUPPORTS_OPENSOURCE_STHAL := true
-
+AUDIO_FEATURE_ENABLED_DYNAMIC_SR := true
 ifneq ($(strip $(TARGET_USES_RRO)), true)
 #Audio Specific device overlays
 DEVICE_PACKAGE_OVERLAYS += vendor/qcom/opensource/audio-hal/primary-hal/configs/common/overlay
