@@ -542,9 +542,25 @@ private:
     pal_device_id_t* mPalOutDeviceIds;
     std::set<audio_devices_t> mAndroidOutDevices;
     bool mInitialized;
+    bool isOffloadUsecase() {
+        int usecase = GetUseCase();
+        switch (usecase) {
+            case USECASE_AUDIO_PLAYBACK_OFFLOAD:
+            case USECASE_AUDIO_PLAYBACK_OFFLOAD2:
+            case USECASE_AUDIO_PLAYBACK_OFFLOAD3:
+            case USECASE_AUDIO_PLAYBACK_OFFLOAD4:
+            case USECASE_AUDIO_PLAYBACK_OFFLOAD5:
+            case USECASE_AUDIO_PLAYBACK_OFFLOAD6:
+            case USECASE_AUDIO_PLAYBACK_OFFLOAD7:
+            case USECASE_AUDIO_PLAYBACK_OFFLOAD8:
+            case USECASE_AUDIO_PLAYBACK_OFFLOAD9:
+                return true;
+            default:
+                return false;
+        }
+    }
 
     // [offload playspeed
-    bool isOffloadUsecase() { return GetUseCase() == USECASE_AUDIO_PLAYBACK_OFFLOAD; }
     bool isOffloadSpeedSupported();
 
     bool isValidPlaybackRate(const audio_playback_rate_t *playbackRate);
