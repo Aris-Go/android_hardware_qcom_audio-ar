@@ -94,7 +94,7 @@ BUILD_AUDIO_TECHPACK_SOURCE := true
 AUDIO_FEATURE_ENABLED_MCS := true
 ##AUDIO_FEATURE_FLAGS
 BOARD_SUPPORTS_OPENSOURCE_STHAL := true
-
+AUDIO_FEATURE_ENABLED_DYNAMIC_SR := true
 ifneq ($(strip $(TARGET_USES_RRO)), true)
 #Audio Specific device overlays
 DEVICE_PACKAGE_OVERLAYS += vendor/qcom/opensource/audio-hal/primary-hal/configs/common/overlay
@@ -146,6 +146,7 @@ PRODUCT_COPY_FILES += \
     $(CONFIG_PAL_SRC_DIR)/card-defs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/card-defs.xml \
     $(CONFIG_PAL_SRC_DIR)/mixer_paths_volcano_mtp.xml:$(CONFIG_SKU_OUT_DIR)/mixer_paths_volcano_mtp.xml \
     $(CONFIG_PAL_SRC_DIR)/mixer_paths_volcano_mtp_wsa883x_wcd939x.xml:$(CONFIG_SKU_OUT_DIR)/mixer_paths_volcano_mtp_wsa883x_wcd939x.xml \
+    $(CONFIG_PAL_SRC_DIR)/mixer_paths_volcano6_mtp_wsa883x_wcd939x.xml:$(CONFIG_SKU_OUT_DIR)/mixer_paths_volcano6_mtp_wsa883x_wcd939x.xml \
     $(CONFIG_PAL_SRC_DIR)/mixer_paths_volcano_cdp_wsa883x_wcd939x.xml:$(CONFIG_SKU_OUT_DIR)/mixer_paths_volcano_cdp_wsa883x_wcd939x.xml \
     $(CONFIG_PAL_SRC_DIR)/mixer_paths_volcano_qrd.xml:$(CONFIG_SKU_OUT_DIR)/mixer_paths_volcano_qrd.xml \
     $(CONFIG_PAL_SRC_DIR)/mixer_paths_volcano_mtp_sku1.xml:$(CONFIG_SKU_OUT_DIR)/mixer_paths_volcano_mtp_sku1.xml \
@@ -154,6 +155,7 @@ PRODUCT_COPY_FILES += \
     $(CONFIG_PAL_SRC_DIR)/mixer_paths_volcano_qrd_sku1.xml:$(CONFIG_SKU_OUT_DIR)/mixer_paths_volcano_qrd_sku1.xml \
     $(CONFIG_PAL_SRC_DIR)/resourcemanager_volcano_mtp.xml:$(CONFIG_SKU_OUT_DIR)/resourcemanager_volcano_mtp.xml \
     $(CONFIG_PAL_SRC_DIR)/resourcemanager_volcano_mtp_wsa883x_wcd939x.xml:$(CONFIG_SKU_OUT_DIR)/resourcemanager_volcano_mtp_wsa883x_wcd939x.xml \
+    $(CONFIG_PAL_SRC_DIR)/resourcemanager_volcano6_mtp_wsa883x_wcd939x.xml:$(CONFIG_SKU_OUT_DIR)/resourcemanager_volcano6_mtp_wsa883x_wcd939x.xml \
     $(CONFIG_PAL_SRC_DIR)/resourcemanager_volcano_cdp_wsa883x_wcd939x.xml:$(CONFIG_SKU_OUT_DIR)/resourcemanager_volcano_cdp_wsa883x_wcd939x.xml \
     $(CONFIG_PAL_SRC_DIR)/resourcemanager_volcano_qrd.xml:$(CONFIG_SKU_OUT_DIR)/resourcemanager_volcano_qrd.xml \
     $(CONFIG_PAL_SRC_DIR)/resourcemanager_volcano_mtp_sku1.xml:$(CONFIG_SKU_OUT_DIR)/resourcemanager_volcano_mtp_sku1.xml \

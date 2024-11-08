@@ -81,6 +81,8 @@ AUDIO_MODULES += MTP_acdb_cal.acdb
 AUDIO_MODULES += MTP_workspaceFileXml.qwsp
 AUDIO_MODULES += MTP_wcd939x_acdb_cal.acdb
 AUDIO_MODULES += MTP_wcd939x_workspaceFileXml.qwsp
+AUDIO_MODULES += MTP_6i_wcd939x_acdb_cal.acdb
+AUDIO_MODULES += MTP_6i_wcd939x_workspaceFileXml.qwsp
 AUDIO_MODULES += CDP_wcd939x_acdb_cal.acdb
 AUDIO_MODULES += CDP_wcd939x_workspaceFileXml.qwsp
 AUDIO_MODULES += QRD_acdb_cal.acdb
@@ -131,18 +133,22 @@ AUDIO_MODULES += mm-audio-ftm
 AUDIO_MODULES += libmcs
 AUDIO_MODULES += libquasar
 AUDIO_MODULES += sensors.dynamic_sensor_hal
-AUDIO_MODULES += libvui_dmgr
-AUDIO_MODULES += libvui_dmgr_client
-AUDIO_MODULES += qsap_voiceui
-AUDIO_MODULES += qsap_voiceui.policy
 AUDIO_MODULES += libaudiofeaturestats
 AUDIO_MODULES += libhotword_intf
 AUDIO_MODULES += libcustomva_intf
-AUDIO_MODULES += libvui_intf
 AUDIO_MODULES += libVoiceSdk
 AUDIO_MODULES += libtensorflowlite_c
 AUDIO_MODULES += sm8_gr1UsPdk6XsMfcn220819Enpu4FloateAIv34.uim
 AUDIO_MODULES += sm8_gr3UsMFCN230612eAIv34ENPUv4Float.uim
+
+ifeq ($(PRODUCT_ENABLE_QESDK),true)
+AUDIO_MODULES += libvui_dmgr
+AUDIO_MODULES += libvui_dmgr_client
+AUDIO_MODULES += libvui_intf
+AUDIO_MODULES += qsap_voiceui
+AUDIO_MODULES += qsap_voiceui.rc
+AUDIO_MODULES += qsap_voiceui.policy
+endif
 
 AUDIO_MODULES += $(AUDIO_AGM)
 AUDIO_MODULES += $(AUDIO_PAL)

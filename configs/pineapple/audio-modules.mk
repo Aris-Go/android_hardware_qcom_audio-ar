@@ -109,6 +109,7 @@ AUDIO_MODULES += fai__2.7.20_0.0__3.0.0_0.0__eai_1.36_enpu2.pmd
 AUDIO_MODULES += fai__3.0.0_0.0__eai_1.36_enpu2.pmd
 AUDIO_MODULES += ffv__5.0.1_0.1__3.0.0_0.0__eai_2.10_enpu3.pmd
 AUDIO_MODULES += ffv__5.0.1_0.1__eai_2.10_enpu3.pmd
+AUDIO_MODULES += ffv__5.0.2_0.1__eai_3.4_enpu_v4.pmd
 AUDIO_MODULES += ffv__6.2.5_0.1__eai_3.4__enpu_v4.pmd
 AUDIO_MODULES += ffv__7.0.1_0.1__eai_3.4_enpu_v4.pmd
 AUDIO_MODULES += click.pcm
@@ -137,18 +138,22 @@ AUDIO_MODULES += mm-audio-ftm
 AUDIO_MODULES += libmcs
 AUDIO_MODULES += libquasar
 AUDIO_MODULES += sensors.dynamic_sensor_hal
-AUDIO_MODULES += libvui_dmgr
-AUDIO_MODULES += libvui_dmgr_client
-AUDIO_MODULES += qsap_voiceui
-AUDIO_MODULES += qsap_voiceui.policy
 AUDIO_MODULES += libaudiofeaturestats
 AUDIO_MODULES += libhotword_intf
 AUDIO_MODULES += libcustomva_intf
-AUDIO_MODULES += libvui_intf
 AUDIO_MODULES += libVoiceSdk
 AUDIO_MODULES += libtensorflowlite_c
 AUDIO_MODULES += sm8_gr1UsPdk6XsMfcn220819Enpu4FloateAIv34.uim
 AUDIO_MODULES += sm8_gr3UsMFCN230612eAIv34ENPUv4Float.uim
+
+ifeq ($(PRODUCT_ENABLE_QESDK),true)
+AUDIO_MODULES += libvui_dmgr
+AUDIO_MODULES += libvui_dmgr_client
+AUDIO_MODULES += libvui_intf
+AUDIO_MODULES += qsap_voiceui
+AUDIO_MODULES += qsap_voiceui.rc
+AUDIO_MODULES += qsap_voiceui.policy
+endif
 
 AUDIO_MODULES += $(AUDIO_AGM)
 AUDIO_MODULES += $(AUDIO_PAL)
